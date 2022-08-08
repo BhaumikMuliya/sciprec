@@ -18,7 +18,8 @@ function BlueBox(props) {
       onMouseOver={onBlueHover}
     >
       <ImageContainer>
-        *
+      <img src='WAVE DESIGN 2.png' alt='capsules'
+          style={{ height: 100 }} />
       </ImageContainer>
       {(props.height !== 0) && <Footer />}
     </Box>

@@ -4,6 +4,7 @@ import Header from './header';
 import { ImageContainer } from '../constants/image';
 
 function PinkBox(props) {
+  const [topImageList, setTopImageList] = React.useState([{ key: 0 }])
   const {
     height,
     onPinkHover
@@ -19,7 +20,8 @@ function PinkBox(props) {
     >
       <ImageContainer
         height={height}>
-        *
+        <img src='CAPSULES-2 (1).png' alt='capsules'
+          style={{ height: 100 }} />
       </ImageContainer>
       {(props.height !== 0) && <Header />}
     </Box>
