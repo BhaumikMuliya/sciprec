@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PinkBox from './components/pinkbox';
 import BlueBox from './components/bluebox';
+import Logo from './components/logo';
 
 export default function App() {
   const [screenHeight, setScreenHeight] = React.useState(0);
@@ -30,55 +31,27 @@ export default function App() {
     setBlueHeight(screenHeight / 2)
   }
 
+  window.onresize = () => {
+    setScreenHeight(window.innerHeight)
+  }
+
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <PinkBox
         height={pinkHeight}
         onPinkHover={onPinkHover}
+      />
+      <Logo
+        pinkHeight={pinkHeight}
+        blueHeight={blueHeight}
+        screenHeight={screenHeight}
+        screenWidth={screenWidth}
         onReset={onReset}
       />
-      {(pinkHeight !== 0 && blueHeight !== 0) ?
-        <img src='SCIPREC TEXT BRAND.png' alt='logo'
-          style={{
-            position: 'fixed',
-            height: 350,
-            top: screenHeight / 2 - 170,
-            left: screenWidth / 2 - 262,
-          }}
-        />
-        :
-        ((pinkHeight !== 0) ?
-          <img src='SCIPREC BLUE.png' alt='logo'
-            style={{
-              position: 'fixed',
-              height: 350,
-              top: screenHeight / 2 - 170,
-              left: screenWidth / 2 - 262,
-              '@media (max-width: 550px)': {
-                height: 250,
-                top: screenHeight / 2 - 120,
-                left: screenWidth / 2 - 262,
-              },
-            }}
-            onClick={onReset}
-          />
-          :
-          <img src='SCIPREC PINK.png' alt='logo'
-            style={{
-              position: 'fixed',
-              height: 350,
-              top: screenHeight / 2 - 170,
-              left: screenWidth / 2 - 262,
-            }}
-            onClick={onReset}
-          />
-        )
-      }
       <BlueBox
         height={blueHeight}
         onBlueHover={onBlueHover}
-        onReset={onReset}
       />
-    </>
+    </div>
   );
 }
