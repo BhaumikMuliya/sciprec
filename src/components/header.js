@@ -8,6 +8,7 @@ function Header() {
         top: 0,
         paddingLeft: 15,
         paddingRight: 30,
+        zIndex: 99
       }}>
       <Grid item>
         <img src='SCIPREC_LOGO_WHITE-removebg-preview.png' alt='logo'
