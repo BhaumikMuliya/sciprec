@@ -37,10 +37,13 @@ export default function App() {
 
   return (
     <div style={{ width: '100%' }}>
-      <PinkBox
-        height={pinkHeight}
-        onPinkHover={onPinkHover}
-      />
+      {pinkHeight !== 0 &&
+        <PinkBox
+          height={pinkHeight}
+          screenHeight={screenHeight}
+          screenWidth={screenWidth}
+          onPinkHover={onPinkHover}
+        />}
       <Logo
         pinkHeight={pinkHeight}
         blueHeight={blueHeight}
@@ -48,10 +51,13 @@ export default function App() {
         screenWidth={screenWidth}
         onReset={onReset}
       />
-      <BlueBox
-        height={blueHeight}
-        onBlueHover={onBlueHover}
-      />
+      {blueHeight !== 0 &&
+        <BlueBox
+          height={blueHeight}
+          screenHeight={screenHeight}
+          screenWidth={screenWidth}
+          onBlueHover={onBlueHover}
+        />}
     </div>
   );
 }

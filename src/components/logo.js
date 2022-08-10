@@ -16,6 +16,7 @@ export default function Logo(props) {
             height: 350,
             top: screenHeight / 2 - 170,
             left: screenWidth / 2 - 260,
+            zIndex: 99
           }}
         />
         :
@@ -26,6 +27,7 @@ export default function Logo(props) {
               height: 350,
               top: screenHeight / 2 - 170,
               left: screenWidth / 2 - 260,
+              zIndex: 99
             }}
             onClick={onReset}
           />
@@ -36,6 +38,7 @@ export default function Logo(props) {
               height: 350,
               top: screenHeight / 2 - 170,
               left: screenWidth / 2 - 260,
+              zIndex: 99
             }}
             onClick={onReset}
           />

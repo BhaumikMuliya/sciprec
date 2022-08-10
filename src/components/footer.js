@@ -8,6 +8,7 @@ function Footer() {
         bottom: 0,
         paddingLeft: 30,
         paddingRight: 15,
+        zIndex: 99
       }}>
       <Grid item>
         <Stack direction="row" spacing={2}>
