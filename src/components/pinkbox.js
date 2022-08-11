@@ -6,44 +6,45 @@ import Images from '../constants/imagelist'
 
 function PinkBox(props) {
   const {
-    height,
+    pinkHeight,
     screenHeight,
     screenWidth,
     onPinkHover
   } = props;
-  const [topImageList, setTopImageList] = React.useState([{
-    key: 0,
-    offset: 0,
-    height: 0,
-    image: Images?.pinkImages[0]
-  }])
+  const [topImageList, setTopImageList] = React.useState([])
+
+  React.useEffect(() => {
+    setTopImageList([])
+  }, [pinkHeight]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (topImageList.length > 3) {
+      const maxImageOnScreen = Math.floor(pinkHeight / 125);
+      if (topImageList.length > maxImageOnScreen) {
         topImageList.shift();
       }
-      const offset = Math.floor(Math.random() * screenWidth);
+      const offset = Math.floor(Math.random() * screenWidth - 50);
       const key = offset + Math.floor(Math.random() * 10000);
       const image = Images?.pinkImages[Math.floor(Math.random() * 3)];
+      const size = Math.floor(Math.random() * (150 - 50) + 50);
 
-      topImageList.push({ offset, key, image });
+      topImageList.push({ offset, key, image, size });
       setTopImageList([...topImageList])
     }, 1000);
     return () => clearInterval(interval);
-  }, [screenWidth, topImageList]);
+  }, [pinkHeight, screenWidth, topImageList]);
 
   return (
     <Box
       sx={{
-        height: height,
+        height: pinkHeight,
         backgroundColor: '#f64b96',
       }}
       onMouseOver={onPinkHover}
     >
-      {topImageList.map(({ key, offset, image }) => (
-        <PinkImageContainer key={key} screenHeight={screenHeight} pinkHeight={height} offset={offset}>
-          {image}
+      {topImageList.map(({ key, offset, image, size }) => (
+        <PinkImageContainer key={key} screenHeight={screenHeight} pinkHeight={pinkHeight} offset={offset}>
+          <img src={image} alt='life-sciences' style={{ height: size }} />
         </PinkImageContainer>
       ))}
       <Header />

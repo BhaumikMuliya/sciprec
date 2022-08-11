@@ -8,8 +8,7 @@ export const PinkImageContainer = styled.div`
 margin-left: ${props => props.offset}px;
 position: absolute;
 animation-name: pinkFalldown;
-animation-duration: 5s;
-transition-delay:2s;
+animation-duration: ${props => props.screenHeight === props.pinkHeight ? 10 : 5}s;
 `;
 
 export const BlueImageContainer = styled.div`
@@ -20,6 +19,5 @@ export const BlueImageContainer = styled.div`
 margin-left: ${props => props.offset}px;
 position: absolute;
 animation-name: blueFalldown;
-animation-duration: 5s;
-transition-delay:2s;
+animation-duration: ${props => props.screenHeight === props.blueHeight ? 10 : 5}s;
 `;

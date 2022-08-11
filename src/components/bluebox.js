@@ -6,44 +6,45 @@ import Images from '../constants/imagelist'
 
 function BlueBox(props) {
   const {
-    height,
+    blueHeight,
     screenHeight,
     screenWidth,
     onBlueHover
   } = props;
-  const [topImageList, setTopImageList] = React.useState([{
-    key: 0,
-    offset: 0,
-    height: 0,
-    image: Images?.blueImages[0]
-  }])
+  const [topImageList, setTopImageList] = React.useState([])
+
+  React.useEffect(() => {
+    setTopImageList([])
+  }, [blueHeight]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (topImageList.length > 3) {
+      const maxImageOnScreen = Math.floor(blueHeight / 125);
+      if (topImageList.length > maxImageOnScreen) {
         topImageList.shift();
       }
-      const offset = Math.floor(Math.random() * screenWidth);
+      const offset = Math.floor(Math.random() * screenWidth - 50);
       const key = offset + Math.floor(Math.random() * 10000);
       const image = Images?.blueImages[Math.floor(Math.random() * 3)];
+      const size = Math.floor(Math.random() * (150 - 50) + 50);
 
-      topImageList.push({ offset, key, image });
+      topImageList.push({ offset, key, image, size });
       setTopImageList([...topImageList])
     }, 1000);
     return () => clearInterval(interval);
-  }, [screenWidth, topImageList]);
+  }, [blueHeight, screenWidth, topImageList]);
 
   return (
     <Box
       sx={{
-        height: height,
+        height: blueHeight,
         backgroundColor: '#1a3fb7',
       }}
       onMouseOver={onBlueHover}
     >
-      {topImageList.map(({ key, offset, image }) => (
-        <BlueImageContainer key={key} screenHeight={screenHeight} blueHeight={height} offset={offset}>
-          {image}
+      {topImageList.map(({ key, offset, image, size }) => (
+        <BlueImageContainer key={key} screenHeight={screenHeight} blueHeight={blueHeight} offset={offset}>
+          <img src={image} alt='research-lab' style={{ height: size }} />
         </BlueImageContainer>
       ))}
       <Footer />

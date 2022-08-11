@@ -39,7 +39,7 @@ export default function App() {
     <div style={{ width: '100%' }}>
       {pinkHeight !== 0 &&
         <PinkBox
-          height={pinkHeight}
+          pinkHeight={pinkHeight}
           screenHeight={screenHeight}
           screenWidth={screenWidth}
           onPinkHover={onPinkHover}
@@ -53,7 +53,7 @@ export default function App() {
       />
       {blueHeight !== 0 &&
         <BlueBox
-          height={blueHeight}
+          blueHeight={blueHeight}
           screenHeight={screenHeight}
           screenWidth={screenWidth}
           onBlueHover={onBlueHover}
