@@ -1,16 +1,16 @@
 const Images = {
   pinkImages: [
-    'DROP.png',
-    'CAPSULES.png',
-    'CAPSULES-2.png',
+    'DROP__1_-removebg-preview.png',
+    'CAPSULES (1).png',
+    'CAPSULES-2 (1).png',
     'BACKGROUND_DESIGN-removebg-preview.png'
   ],
   blueImages: [
-    'WAVE 1.png',
+    'WAVE_1__1_-removebg-preview.png',
     'WAVE DESIGN 1.png',
-    'WAVE 1.png',
+    'WAVE_1__1_-removebg-preview.png',
     'WAVE DESIGN 2.png',
-    'WAVE 1.png'
+    'WAVE_1__1_-removebg-preview.png'
   ]
 }
 
