@@ -19,18 +19,18 @@ function BlueBox(props) {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const maxImageOnScreen = Math.floor(blueHeight / 190);
+      const maxImageOnScreen = Math.floor(blueHeight / 80);
       if (topImageList.length > maxImageOnScreen) {
         topImageList.shift();
       }
       const offset = Math.floor(Math.random() * screenWidth - 50);
       const key = offset + Math.floor(Math.random() * 10000);
-      const image = Images?.blueImages[Math.floor(Math.random() * 3)];
-      const size = Math.floor(Math.random() * (150 - 50) + 50);
+      const image = Images?.blueImages[Math.floor(Math.random() * 5)];
+      const size = Math.floor(Math.random() * (125 - 50) + 50);
 
       topImageList.push({ offset, key, image, size });
       setTopImageList([...topImageList])
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [blueHeight, screenWidth, topImageList]);
 
