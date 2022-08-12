@@ -1,0 +1,41 @@
+.EyeBackground {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.BackgroundImage {
+  height: 100vh;
+  background-image: url('../../public/eye-bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.OuterImage {
+  animation: Outer-spin infinite 20s linear;
+}
+
+.InnerImage {
+  animation: Inner-spin infinite 20s linear;
+}
+
+@keyframes Outer-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes Inner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

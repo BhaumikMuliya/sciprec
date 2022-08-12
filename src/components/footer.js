@@ -1,4 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -13,7 +14,9 @@ function Footer() {
       <Grid item>
         <Stack direction="row" spacing={2}>
           <Typography variant="h6" style={{ color: '#f64b96', fontWeight: 700 }}>About</Typography>
-          <Typography variant="h6" style={{ color: '#f64b96', fontWeight: 700 }}>Facility</Typography>
+          <Link to={'facility'}>
+            <Typography variant="h6" style={{ color: '#f64b96', fontWeight: 700 }}>Facility</Typography>
+          </Link>
           <Typography variant="h6" style={{ color: '#f64b96', fontWeight: 700 }}>Contact</Typography>
         </Stack>
         <Typography variant="h3" style={{ color: '#f64b96', textTransform: 'uppercase', fontWeight: 700 }}>Research Lab</Typography>
