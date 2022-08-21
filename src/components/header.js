@@ -1,4 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -21,7 +22,9 @@ function Header() {
         <Typography variant="h3" style={{ color: '#1a3fb7', textTransform: 'uppercase', fontWeight: 700 }}>Life Sciences</Typography>
         <Stack direction="row" spacing={2}>
           <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>About</Typography>
-          <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Product</Typography>
+          <Link to={'product'}>
+            <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Product</Typography>
+          </Link>
           <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Presence</Typography>
           <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Contact</Typography>
         </Stack>

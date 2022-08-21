@@ -8,6 +8,7 @@ import {
 import './index.css';
 import App from './App';
 import EyeBackground from './routes/eye-background';
+import Product from './routes/product';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="facility" element={<EyeBackground />} />
+      <Route path="product" element={<Product />} />
     </Routes>
   </BrowserRouter>
 );

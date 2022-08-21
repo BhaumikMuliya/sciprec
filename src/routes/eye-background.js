@@ -21,7 +21,7 @@ function EyeBackground() {
   }
 
   return (
-    <div className="EyeBackground">
+    <div>
       <div className='BackgroundImage'>
         <img
           src='outer-text.png'
