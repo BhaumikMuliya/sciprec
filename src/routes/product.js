@@ -30,6 +30,7 @@ function Product() {
         )}
       </Grid>
       <Dialog
+        maxWidth={'md'}
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
