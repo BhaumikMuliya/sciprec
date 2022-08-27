@@ -10,11 +10,16 @@
 .OuterImage {
   animation: Outer-spin infinite 20s linear;
 }
+.OuterImage:hover {
+  animation-play-state: paused;
+}
 
 .InnerImage {
   animation: Inner-spin infinite 20s linear;
 }
-
+.InnerImage:hover {
+  animation-play-state: paused;
+}
 @keyframes Outer-spin {
   from {
     transform: rotate(0deg);

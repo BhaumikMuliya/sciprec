@@ -3,10 +3,8 @@ import './eye-background.css';
 
 function EyeBackground() {
   const [outerImage, setOuterImage] = React.useState({ height: 0, width: 0 })
-  const [outerRotate, setOuterRotate] = React.useState(true)
   const [innerImage, setInnerImage] = React.useState({ height: 0, width: 0 })
-  const [innerRotate, setInnerRotate] = React.useState(true)
-
+ 
   const handleOuterImage = (event) => {
     setOuterImage({
       height: event.target.clientHeight,
@@ -27,9 +25,7 @@ function EyeBackground() {
           src='outer-text.png'
           alt='outer-text'
           onLoad={handleOuterImage}
-          onMouseOver={() => setOuterRotate(false)}
-          onMouseOut={() => setOuterRotate(true)}
-          className={outerRotate ? 'OuterImage' : ''}
+          className= 'OuterImage' 
           style={{
             position: 'fixed',
             height: '90%',
@@ -43,9 +39,7 @@ function EyeBackground() {
           src='inner-text.png'
           alt='inner-text'
           onLoad={handleInnerImage}
-          onMouseOver={() => setInnerRotate(false)}
-          onMouseOut={() => setInnerRotate(true)}
-          className={innerRotate ? 'InnerImage' : ''}
+          className= 'InnerImage' 
           style={{
             position: 'fixed',
             height: '77%',
