@@ -19,7 +19,7 @@ function PinkBox(props) {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const maxImageOnScreen = Math.floor(pinkHeight / 50);
+      const maxImageOnScreen = Math.floor(pinkHeight / 60);
       if (topImageList.length > maxImageOnScreen) {
         topImageList.shift();
       }

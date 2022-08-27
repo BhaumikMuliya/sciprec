@@ -19,7 +19,7 @@ function BlueBox(props) {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const maxImageOnScreen = Math.floor(blueHeight / 50);
+      const maxImageOnScreen = Math.floor(blueHeight / 60);
       if (topImageList.length > maxImageOnScreen) {
         topImageList.shift();
       }

@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Dialog, DialogContent, DialogTitle, Grid, IconButton, Typography } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle, Grid, IconButton, Stack, Typography } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import ProductCard from '../components/productCard';
 import Products from "../constants/productlist";
+import { Link } from "react-router-dom";
 
 function Product() {
   const [open, setOpen] = React.useState(false);
@@ -20,8 +21,31 @@ function Product() {
   };
 
   return (
-    <div style={{ backgroundColor: 'black', textAlign: 'center' }}>
-      <Typography variant="h3" style={{ fontFamily: 'Nunito', fontSize: '35px', color: 'white', fontWeight: 'bold', padding: '30px 0' }}>EYE DROPS</Typography>
+    <div style={{ backgroundColor: 'black' }}>
+      <Grid container justifyContent='space-between' alignItems='center'>
+        <Grid item lg={4} md={4} sm={4} xs={4}>
+          <Link to={'/'}>
+            <img src='SCIPREC_LOGO_WHITE-removebg-preview.png' alt='logo'
+              style={{
+                height: 150,
+              }}
+            />
+          </Link>
+        </Grid>
+        <Grid item lg={3} md={3} sm={3} xs={3}>
+          <Typography variant="h3" style={{ textAlign: 'center', fontFamily: 'Nunito', fontSize: '35px', color: 'white', fontWeight: 'bold', padding: '30px 0' }}>EYE DROPS</Typography>
+        </Grid>
+        <Grid item lg={4} md={4} sm={4} xs={4}>
+          <Stack direction="row" spacing={2} justifyContent='flex-end'>
+            <Typography variant="h6" style={{ color: '#fff', fontWeight: 700 }}>About</Typography>
+            <Link to={'/facility'}>
+              <Typography variant="h6" style={{ color: '#fff', fontWeight: 700 }}>Product</Typography>
+            </Link>
+            <Typography variant="h6" style={{ color: '#fff', fontWeight: 700 }}>Presence</Typography>
+            <Typography variant="h6" style={{ color: '#fff', fontWeight: 700, marginRight: '20px' }}>Contact</Typography>
+          </Stack>
+        </Grid>
+      </Grid>
       <Grid container>
         {Products.map((item, index) =>
           <Grid key={index} item lg={4} md={6} sm={6} xs={12} onClick={() => handleClickOpen(item)}>

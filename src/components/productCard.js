@@ -15,6 +15,7 @@ function ProductCard(props) {
           fontFamily: 'Nunito',
           fontSize: '20px',
           padding: '5px 0',
+          textAlign: 'center',
           fontWeight: 'bold',
           letterSpacing: hover ? '4px' : '0',
           transition: 'all .2s linear'

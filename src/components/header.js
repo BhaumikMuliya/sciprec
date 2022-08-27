@@ -22,7 +22,7 @@ function Header() {
         <Typography variant="h3" style={{ color: '#1a3fb7', textTransform: 'uppercase', fontWeight: 700 }}>Life Sciences</Typography>
         <Stack direction="row" spacing={2}>
           <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>About</Typography>
-          <Link to={'product'}>
+          <Link to={'/facility'}>
             <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Product</Typography>
           </Link>
           <Typography variant="h6" style={{ color: '#1a3fb7', fontWeight: 700 }}>Presence</Typography>
