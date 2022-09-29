@@ -3,8 +3,13 @@ import './eye-background.css';
 import { Link } from "react-router-dom";
 
 function EyeBackground() {
+  const [screenWidth, setScreenWidth] = React.useState(0);
   const [outerImage, setOuterImage] = React.useState({ height: 0, width: 0 })
   const [innerImage, setInnerImage] = React.useState({ height: 0, width: 0 })
+
+  React.useEffect(() => {
+    setScreenWidth(window.innerWidth)
+  }, [])
 
   const handleOuterImage = (event) => {
     setOuterImage({
@@ -24,7 +29,7 @@ function EyeBackground() {
       <Link to={'/'}>
         <img src='SCIPREC_LOGO_BLACK-removebg-preview.png' alt='logo'
           style={{
-            height: 150,
+            height: screenWidth > 900 ? 150 : 75,
             position: 'fixed',
           }}
         />
@@ -38,7 +43,7 @@ function EyeBackground() {
             className='OuterImage'
             style={{
               position: 'fixed',
-              height: '90%',
+              height: screenWidth > 900 ? '90%' : '45%',
               top: '50%',
               left: '50%',
               marginTop: -outerImage.height / 2,
@@ -54,7 +59,7 @@ function EyeBackground() {
             className='InnerImage'
             style={{
               position: 'fixed',
-              height: '77%',
+              height: screenWidth > 900 ? '77%' : '40%',
               top: '50%',
               left: '50%',
               marginTop: -innerImage.height / 2,
